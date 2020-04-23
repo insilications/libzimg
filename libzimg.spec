@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : libzimg
 Version  : 1
-Release  : 3
+Release  : 4
 URL      : https://github.com/sekrit-twc/zimg/archive/master.zip
 Source0  : https://github.com/sekrit-twc/zimg/archive/master.zip
 Summary  : Scaling, colorspace conversion, and dithering library
@@ -95,7 +95,7 @@ unset http_proxy
 unset https_proxy
 unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1587653131
+export SOURCE_DATE_EPOCH=1587653416
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -110,7 +110,7 @@ export LDFLAGS="-O3 -Wl,--build-id=sha1 -Wl,--hash-style=gnu -Wl,-O2 -Wl,-sort-c
 export CXXFLAGS="-O3 -Wall -Wl,--build-id=sha1 -Wl,--enable-new-dtags -Wl,--hash-style=gnu -Wl,-O2 -Wl,-sort-common -Wl,-z,now -Wl,-z,relro -Wno-error -Wp,-D_REENTRANT -falign-functions=32 -fasynchronous-unwind-tables -fdevirtualize-at-ltrans -feliminate-unused-debug-types -ffat-lto-objects -fipa-pta -floop-nest-optimize -flto=6 -fno-PIC -fno-PIE -fno-math-errno -fno-pie -fno-semantic-interposition -fno-stack-protector -fno-trapping-math -fpic -ftree-loop-distribute-patterns -ftree-loop-vectorize -ftree-vectorize -funroll-loops -fuse-ld=bfd -fuse-linker-plugin -fvisibility-inlines-hidden -g -m64 -malign-data=cacheline -march=native -mtls-dialect=gnu2 -mtune=native -pipe"
 unset LD_AS_NEEDED
 ## altflags1 end
-%configure
+%configure  --enable-testapp --enable-example --enable-simd
 ## make_prepend content
 find . -type f -name 'Makefile' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
 #
@@ -128,7 +128,7 @@ unset no_proxy
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1587653131
+export SOURCE_DATE_EPOCH=1587653416
 rm -rf %{buildroot}
 %make_install
 
