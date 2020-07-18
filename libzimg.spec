@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : libzimg
 Version  : 2.9.3
-Release  : 5
+Release  : 6
 URL      : file:///insilications/build/clearlinux/packages/libzimg/libzimg-release-2.9.3.zip
 Source0  : file:///insilications/build/clearlinux/packages/libzimg/libzimg-release-2.9.3.zip
 Summary  : Scaling, colorspace conversion, and dithering library
@@ -81,7 +81,7 @@ unset http_proxy
 unset https_proxy
 unset no_proxy
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1595043296
+export SOURCE_DATE_EPOCH=1595043752
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -123,7 +123,7 @@ unset no_proxy
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1595043296
+export SOURCE_DATE_EPOCH=1595043752
 rm -rf %{buildroot}
 %make_install
 
