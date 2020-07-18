@@ -1,23 +1,6 @@
-find . -type f -name 'configure' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name 'configure.ac' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name 'libtool' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name 'libtool.m4' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
+find . -type f -name 'configure*' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
+find . -type f -name '*.ac' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
+find . -type f -name 'libtool*' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
 find . -type f -name '*.m4' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#
-find . -type f -name 'configure' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name 'configure.ac' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name 'libtool' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name 'libtool.m4' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name '*.m4' -exec sed -i 's/\-fPIE/ /g' {} \;
-autoreconf -v --install --force
-find . -type f -name 'configure' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name 'configure.ac' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name 'libtool' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name 'libtool.m4' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-find . -type f -name '*.m4' -exec sed -i 's/\-fPIC/\-fpic/g' {} \;
-#
-find . -type f -name 'configure' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name 'configure.ac' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name 'libtool' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name 'libtool.m4' -exec sed -i 's/\-fPIE/ /g' {} \;
-find . -type f -name '*.m4' -exec sed -i 's/\-fPIE/ /g' {} \;
+echo "AM_MAINTAINER_MODE([disable])" >> configure.ac
+find . -type f -name 'config.status' -exec touch {} \;

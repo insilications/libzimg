@@ -1,1 +1,1 @@
---enable-testapp --enable-example --enable-simd
+--enable-testapp --enable-example --enable-simd --disable-maintainer-mode
