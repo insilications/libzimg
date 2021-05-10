@@ -1,0 +1,7 @@
+--enable-shared
+--enable-static
+--disable-testapp
+--disable-example
+--enable-simd
+--disable-maintainer-mode
+--disable-unit-test
